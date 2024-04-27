@@ -1934,6 +1934,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prisma/adapter-pg@npm:^5.13.0":
+  version: 5.13.0
+  resolution: "@prisma/adapter-pg@npm:5.13.0"
+  dependencies:
+    "@prisma/driver-adapter-utils": "npm:5.13.0"
+    postgres-array: "npm:3.0.2"
+  peerDependencies:
+    pg: ^8.11.3
+  checksum: 10c0/75ba763e3df4785490611c795df0ae1b4b66d9958ac7320df436e011bd26f588778914fb4d70a9e61254a3e34aa4a1cb00369620e75b6b402cc7ab11e367f0fe
+  languageName: node
+  linkType: hard
+
 "@prisma/client@npm:^5.13.0":
   version: 5.13.0
   resolution: "@prisma/client@npm:5.13.0"
@@ -1950,6 +1962,15 @@ __metadata:
   version: 5.13.0
   resolution: "@prisma/debug@npm:5.13.0"
   checksum: 10c0/9e3a84e473a77ae16adeeae3de27ec9f8431bffdd563fd7441f42596c6f6a7a766832c3c17a84a8d89e4133028b361dd274b48291425f388b4fb4575093cf3ed
+  languageName: node
+  linkType: hard
+
+"@prisma/driver-adapter-utils@npm:5.13.0":
+  version: 5.13.0
+  resolution: "@prisma/driver-adapter-utils@npm:5.13.0"
+  dependencies:
+    "@prisma/debug": "npm:5.13.0"
+  checksum: 10c0/6090c8489e8fe1a81aaba7b3db60c696290480112880696775d02ab2c0fa0bcb0c842bffedb078461137da39056e02b82fc9cc3ccc640c12c64b92bbf5636032
   languageName: node
   linkType: hard
 
@@ -6447,6 +6468,7 @@ __metadata:
     "@nestjs/schematics": "npm:^10.0.0"
     "@nestjs/testing": "npm:^10.0.0"
     "@nestjs/websockets": "npm:^10.3.8"
+    "@prisma/adapter-pg": "npm:^5.13.0"
     "@prisma/client": "npm:^5.13.0"
     "@types/axios": "npm:^0.14.0"
     "@types/cookie-parser": "npm:^1.4.7"
@@ -7421,17 +7443,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postgres-array@npm:3.0.2, postgres-array@npm:~3.0.1":
+  version: 3.0.2
+  resolution: "postgres-array@npm:3.0.2"
+  checksum: 10c0/644aa071f67a66a59f641f8e623887d2b915bc102a32643e2aa8b54c11acd343c5ad97831ea444dd37bd4b921ba35add4aa2cb0c6b76700a8252c2324aeba5b4
+  languageName: node
+  linkType: hard
+
 "postgres-array@npm:~2.0.0":
   version: 2.0.0
   resolution: "postgres-array@npm:2.0.0"
   checksum: 10c0/cbd56207e4141d7fbf08c86f2aebf21fa7064943d3f808ec85f442ff94b48d891e7a144cc02665fb2de5dbcb9b8e3183a2ac749959e794b4a4cfd379d7a21d08
-  languageName: node
-  linkType: hard
-
-"postgres-array@npm:~3.0.1":
-  version: 3.0.2
-  resolution: "postgres-array@npm:3.0.2"
-  checksum: 10c0/644aa071f67a66a59f641f8e623887d2b915bc102a32643e2aa8b54c11acd343c5ad97831ea444dd37bd4b921ba35add4aa2cb0c6b76700a8252c2324aeba5b4
   languageName: node
   linkType: hard
 
