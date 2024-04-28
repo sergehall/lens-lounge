@@ -13,7 +13,7 @@ async function bootstrap() {
 
   // Start the application and listen on the specified port
   await app.listen(port, () => {
-    console.log(`Example app listening on port: ${port}`);
+    console.log(`Lens-lounge app listening on port: ${port}`);
   });
 
   const baseUrl = await app.getUrl();
