@@ -5,9 +5,9 @@
   "author": "Serge Hall",
   "private": true,
   "license": "It_Incubator",
-  "packageManager": "yarn@4.1.1",
   "engines": {
     "node": "20.11.1",
+    "yarn": "4.1.1",
     "npm": "10.5.0"
   },
   "scripts": {
