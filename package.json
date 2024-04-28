@@ -5,11 +5,17 @@
   "author": "Serge Hall",
   "private": true,
   "license": "It_Incubator",
+  "packageManager": "yarn@4.1.1",
+  "engines": {
+    "node": "20.11.1",
+    "yarn": "4.1.1",
+    "npm": "10.5.0"
+  },
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "start:dev.lens-lounge": "nest start lens-lounge --watch",
     "start:dev.payment": "nest start payment --watch",
     "start:dev.file-services": "nest start file-service --watch",
     "start:debug": "nest start --debug --watch",
