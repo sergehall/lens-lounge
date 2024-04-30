@@ -1,8 +1,8 @@
 version: 1
 env:
   variables:
-    ACCESS_KEY: process.env.AMPLIFY_ACCESS_KEY
-    SECRET_ACCESS_KEY: process.env.AMPLIFY_SECRET_ACCESS_KEY
+    ACCESS_KEY: process.env.ACCESS_KEY
+    SECRET_ACCESS_KEY: process.env.ACCESS_KEY
 backend:
   phases:
     preBuild:
