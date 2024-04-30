@@ -7,7 +7,6 @@
   "license": "It_Incubator",
   "engines": {
     "node": "20.11.1",
-    "yarn": "4.1.1",
     "npm": "10.5.0"
   },
   "scripts": {
@@ -27,6 +26,7 @@
     "test:e2e": "jest --config ./apps/lens-lounge/test/jest-e2e.json"
   },
   "dependencies": {
+    "@aws-amplify/cli": "^12.11.1",
     "@aws-sdk/client-s3": "^3.564.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.2.2",

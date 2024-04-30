@@ -63,6 +63,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@aws-amplify/cli@npm:^12.11.1":
+  version: 12.11.1
+  resolution: "@aws-amplify/cli@npm:12.11.1"
+  dependencies:
+    axios: "npm:^1.6.7"
+    rimraf: "npm:^3.0.2"
+    tar-stream: "npm:^2.2.0"
+  bin:
+    amplify: lib/run.js
+  checksum: 10c0/05d07616a4afedfe96d5cd5bc50165e75fa4855ff7b7f1d64c454c0c9fad0c8f8cb3507ee16c5068e52e4787eeba60ac94f32ac28774f32a2cd902632c2f47d1
+  languageName: node
+  linkType: hard
+
 "@aws-crypto/crc32@npm:3.0.0":
   version: 3.0.0
   resolution: "@aws-crypto/crc32@npm:3.0.0"
@@ -3556,7 +3569,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:*":
+"axios@npm:*, axios@npm:^1.6.7":
   version: 1.6.8
   resolution: "axios@npm:1.6.8"
   dependencies:
@@ -3671,7 +3684,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bl@npm:^4.1.0":
+"bl@npm:^4.0.3, bl@npm:^4.1.0":
   version: 4.1.0
   resolution: "bl@npm:4.1.0"
   dependencies:
@@ -4488,6 +4501,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"end-of-stream@npm:^1.4.1":
+  version: 1.4.4
+  resolution: "end-of-stream@npm:1.4.4"
+  dependencies:
+    once: "npm:^1.4.0"
+  checksum: 10c0/870b423afb2d54bb8d243c63e07c170409d41e20b47eeef0727547aea5740bd6717aca45597a9f2745525667a6b804c1e7bede41f856818faee5806dd9ff3975
+  languageName: node
+  linkType: hard
+
 "engine.io-parser@npm:~5.2.1":
   version: 5.2.2
   resolution: "engine.io-parser@npm:5.2.2"
@@ -5129,6 +5151,13 @@ __metadata:
   version: 0.5.2
   resolution: "fresh@npm:0.5.2"
   checksum: 10c0/c6d27f3ed86cc5b601404822f31c900dd165ba63fff8152a3ef714e2012e7535027063bc67ded4cb5b3a49fa596495d46cacd9f47d6328459cf570f08b7d9e5a
+  languageName: node
+  linkType: hard
+
+"fs-constants@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "fs-constants@npm:1.0.0"
+  checksum: 10c0/a0cde99085f0872f4d244e83e03a46aa387b74f5a5af750896c6b05e9077fac00e9932fdf5aef84f2f16634cd473c63037d7a512576da7d5c2b9163d1909f3a8
   languageName: node
   linkType: hard
 
@@ -6455,6 +6484,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "lens-lounge@workspace:."
   dependencies:
+    "@aws-amplify/cli": "npm:^12.11.1"
     "@aws-sdk/client-s3": "npm:^3.564.0"
     "@nestjs/cli": "npm:^10.0.0"
     "@nestjs/common": "npm:^10.0.0"
@@ -7706,7 +7736,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"readable-stream@npm:^3.4.0":
+"readable-stream@npm:^3.1.1, readable-stream@npm:^3.4.0":
   version: 3.6.2
   resolution: "readable-stream@npm:3.6.2"
   dependencies:
@@ -8424,6 +8454,19 @@ __metadata:
   version: 2.2.1
   resolution: "tapable@npm:2.2.1"
   checksum: 10c0/bc40e6efe1e554d075469cedaba69a30eeb373552aaf41caeaaa45bf56ffacc2674261b106245bd566b35d8f3329b52d838e851ee0a852120acae26e622925c9
+  languageName: node
+  linkType: hard
+
+"tar-stream@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "tar-stream@npm:2.2.0"
+  dependencies:
+    bl: "npm:^4.0.3"
+    end-of-stream: "npm:^1.4.1"
+    fs-constants: "npm:^1.0.0"
+    inherits: "npm:^2.0.3"
+    readable-stream: "npm:^3.1.1"
+  checksum: 10c0/2f4c910b3ee7196502e1ff015a7ba321ec6ea837667220d7bcb8d0852d51cb04b87f7ae471008a6fb8f5b1a1b5078f62f3a82d30c706f20ada1238ac797e7692
   languageName: node
   linkType: hard
 
