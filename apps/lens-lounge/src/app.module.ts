@@ -8,9 +8,16 @@ import { CommentsModule } from './features/comments/comments.module';
 import { UsersModule } from './features/users/users.module';
 import { MailsModule } from './common/mails/mails.module';
 import { PipesModule } from './common/pipes/pipes.module';
+import { CustomConfigModule } from '../config/custom.config-module';
+import { ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerOptions } from '../config/throttle/throttler-options';
 
 @Module({
   imports: [
+    CustomConfigModule,
+    ThrottlerModule.forRootAsync({
+      useClass: ThrottlerOptions, // Use the ThrottlerModuleOptions class as the stripe
+    }),
     SocketModule,
     AuthModule,
     PostsModule,

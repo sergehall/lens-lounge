@@ -1,4 +1,8 @@
 import { Module } from '@nestjs/common';
+import { TrimPipe } from './trim.pipe';
 
-@Module({})
+@Module({
+  providers: [TrimPipe],
+  exports: [TrimPipe],
+})
 export class PipesModule {}
