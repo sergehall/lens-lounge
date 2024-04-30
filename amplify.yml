@@ -9,9 +9,9 @@ backend:
         - yarn install
     build:
       commands:
-        - yarn run build
+        - amplifyPush --simple
     artifacts:
-      baseDirectory: ./amplify/backend
+      baseDirectory: public
       files:
         - '**/*'
 frontend:
