@@ -1,20 +1,20 @@
 version: 1
 env:
   variables:
-    ACCESS_KEY: AMPLIFY_ACCESS_KEY
-    SECRET_ACCESS_KEY: AMPLIFY_SECRET_ACCESS_KEY
-backend:
-  phases:
-    preBuild:
-      commands:
-        - yarn install
-    build:
-      commands:
-        - amplifyPush --simple
-    artifacts:
-      baseDirectory: public
-      files:
-        - '**/*'
+    ACCESS_KEY: process.env.AMPLIFY_ACCESS_KEY
+    SECRET_ACCESS_KEY: process.env.AMPLIFY_SECRET_ACCESS_KEY
+#backend:
+#  phases:
+#    preBuild:
+#      commands:
+#        - yarn install
+#    build:
+#      commands:
+#        - amplifyPush --simple
+#    artifacts:
+#      baseDirectory: public
+#      files:
+#        - '**/*'
 frontend:
   phases:
     preBuild:
