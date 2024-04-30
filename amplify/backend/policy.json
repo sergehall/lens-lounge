@@ -1,8 +1,0 @@
-"Condition": {
-  "ArnLike": {
-    "aws:SourceArn": "arn:aws:amplify:us-east-1:123456789012:apps/*"
-  },
-  "StringEquals": {
-    "aws:SourceAccount": "123456789012"
-  }
-}
