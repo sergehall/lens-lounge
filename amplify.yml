@@ -1,0 +1,48 @@
+version: 1
+env:
+  variables:
+    key: value
+backend:
+  phases:
+    preBuild:
+      commands:
+        - yarn install
+    build:
+      commands:
+        - yarn run build
+    artifacts:
+      baseDirectory: ./amplify/backend
+      files:
+        - '**/*'
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - yarn install
+    build:
+      commands:
+        - yarn run build
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+#test:
+#  phases:
+#    preTest:
+#      commands:
+#        - *enter command*
+#    test:
+#      commands:
+#        - *enter command*
+#    postTest:
+#      commands:
+#        - *enter command*
+#  artifacts:
+#    files:
+#      - location
+#      - location
+#    configFilePath: *location*
+#    baseDirectory: *location*
