@@ -7,6 +7,9 @@ async function bootstrap() {
     rawBody: true,
   });
 
+  // Set global prefix
+  app.setGlobalPrefix('api');
+
   // Retrieve the port from environment variables, default to 5002 if not provided
   const port = process.env.PORT || 5002;
 

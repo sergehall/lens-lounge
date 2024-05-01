@@ -13,6 +13,9 @@ async function bootstrap() {
   // Apply configurations using the createApp function (assuming it configures the app)
   createApp(app);
 
+  // Set global prefix
+  app.setGlobalPrefix('api');
+
   // Retrieve the configuration service to access environment variables
   const configService = app.get(ConfigService<ConfigType, true>);
   console.log(
