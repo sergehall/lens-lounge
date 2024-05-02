@@ -307,10 +307,6 @@ class Configuration {
         S3_PUBLIC_BUCKET: Configuration.getS3PublicBucket(),
         S3_REGION: Configuration.getS3Region(),
       },
-      amplify: {
-        AMPLIFY_ACCESS_KEY: Configuration.getAmplifyAccessKeyId(),
-        AMPLIFY_SECRET_ACCESS_KEY: Configuration.getAmplifySecretAccessKeyId(),
-      },
       db: {
         postgres: {
           PG_PORT: Configuration.getPgPort(),

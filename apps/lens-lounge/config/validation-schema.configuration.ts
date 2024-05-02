@@ -7,8 +7,6 @@ export const validationSchemaConfiguration = Joi.object({
     EnvNamesEnums.PRODUCTION,
     EnvNamesEnums.TEST,
   ),
-  AMPLIFY_ACCESS_KEY: Joi.string().min(20).max(20).required(),
-  AMPLIFY_SECRET_ACCESS_KEY: Joi.string().min(40).max(40).required(),
 }).options({
   abortEarly: false,
   messages: {
