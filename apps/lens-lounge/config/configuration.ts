@@ -233,20 +233,6 @@ class Configuration {
     return this.readEnvVariableWithDefault('ACCESS_KEY_ID', 'ACCESS_KEY_ID');
   }
 
-  private static getAmplifyAccessKeyId(): string {
-    return this.readEnvVariableWithDefault(
-      'AMPLIFY_ACCESS_KEY',
-      'AMPLIFY_ACCESS_KEY',
-    );
-  }
-
-  private static getAmplifySecretAccessKeyId(): string {
-    return this.readEnvVariableWithDefault(
-      'AMPLIFY_SECRET_ACCESS_KEY',
-      'AMPLIFY_SECRET_ACCESS_KEY',
-    );
-  }
-
   private static getAwsAccessSecretKey(): string {
     return this.readEnvVariableWithDefault(
       'SECRET_ACCESS_KEY',
