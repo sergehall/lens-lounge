@@ -7,7 +7,7 @@ async function bootstrap() {
     rawBody: true,
   });
 
-  // Set global prefix
+  // Set global prefix for all routes
   app.setGlobalPrefix('api');
 
   // Retrieve the port from environment variables, default to 5002 if not provided
