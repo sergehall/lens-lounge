@@ -3,6 +3,7 @@ import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { EnvNamesEnums } from '../enums/env-names.enums';
 import { ThrottleTypes } from '../throttle/types/throttle.types';
+import { VersionType } from './types /version-type';
 
 @Injectable()
 export class BaseConfig {
@@ -15,6 +16,12 @@ export class BaseConfig {
     return this.configService.get('ENV', {
       infer: true,
     });
+  }
+
+  async getVersion(key: VersionType): Promise<string> {
+    return this.configService.get('version', {
+      infer: true,
+    })[key];
   }
 
   /**

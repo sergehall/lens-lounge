@@ -11,6 +11,7 @@ import { PipesModule } from './common/pipes/pipes.module';
 import { CustomConfigModule } from '../config/custom.config-module';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { ThrottlerOptions } from '../config/throttle/throttler-options';
+import { BaseConfig } from '../config/base/base.config';
 
 @Module({
   imports: [
@@ -27,6 +28,6 @@ import { ThrottlerOptions } from '../config/throttle/throttler-options';
     PipesModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, BaseConfig],
 })
 export class AppModule {}

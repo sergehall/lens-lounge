@@ -280,11 +280,23 @@ class Configuration {
     );
   }
 
+  private static getVersion1(): string {
+    return this.readEnvVariableWithDefault('VERSION_1', 'VERSION_1');
+  }
+
+  private static getVersion2(): string {
+    return this.readEnvVariableWithDefault('VERSION_2', 'VERSION_2');
+  }
+
   static getConfiguration() {
     const ENV = Configuration.getEnvName();
     return {
       ENV: ENV,
       PORT: Configuration.getPort(),
+      version: {
+        VERSION_1: Configuration.getVersion1(),
+        VERSION_2: Configuration.getVersion2(),
+      },
       aws: {
         ACCESS_KEY_ID: Configuration.getAwsAccessKeyId(),
         SECRET_ACCESS_KEY: Configuration.getAwsAccessSecretKey(),

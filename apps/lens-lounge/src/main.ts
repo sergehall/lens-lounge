@@ -4,6 +4,7 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { ConfigType } from '../config/configuration';
 import { ConfigService } from '@nestjs/config';
 import { createApp } from '../create-app';
+import * as os from 'node:os';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
@@ -24,8 +25,6 @@ async function bootstrap() {
 
   // Retrieve the port from environment variables, default to 5000 if not provided
   const port = configService.get<number>('PORT') || 5000;
-
-  // const port = 5000;
 
   // Start the application and listen on the specified port
   await app.listen(port, () => {
