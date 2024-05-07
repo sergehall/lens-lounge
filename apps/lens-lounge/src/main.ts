@@ -4,7 +4,6 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { ConfigType } from '../config/configuration';
 import { ConfigService } from '@nestjs/config';
 import { createApp } from '../create-app';
-import * as os from 'node:os';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
@@ -13,9 +12,6 @@ async function bootstrap() {
 
   // Apply configurations using the createApp function (assuming it configures the app)
   createApp(app);
-
-  // Set global prefix
-  app.setGlobalPrefix('api');
 
   // Retrieve the configuration service to access environment variables
   const configService = app.get(ConfigService<ConfigType, true>);

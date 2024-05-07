@@ -71,6 +71,15 @@ function setupGlobalPipes(app: INestApplication): void {
 }
 
 /**
+ * Set global prefix for all routes in the NestJS application.
+ *
+ * @param app The INestApplication instance of the NestJS application.
+ */
+function setGlobalPrefix(app: INestApplication): void {
+  app.setGlobalPrefix('api');
+}
+
+/**
  * Set up Swagger documentation for the NestJS application.
  *
  * @param app The INestApplication instance of the NestJS application.
@@ -108,6 +117,7 @@ export const createApp = (app: INestApplication): INestApplication => {
   setupExceptionFilter(app);
   setupCookieParser(app);
   setupGlobalPipes(app);
+  setGlobalPrefix(app);
   setupSwagger(app);
   return app;
 };
