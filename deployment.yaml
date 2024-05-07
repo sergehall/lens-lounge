@@ -1,31 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: lens-lounge
-  labels:
-    app:  lens-lounge
+  name: lens-lounge-deploy
 spec:
-#  replicas: 3
   selector:
     matchLabels:
-      app:  lens-lounge
+      app:  lens-lounge-deploy
   template:
     metadata:
-      name: lens-lounge
       labels:
-        app:  lens-lounge
+        app: lens-lounge-deploy
     spec:
       containers:
-        - name: lens-lounge
+        - name: lens-lounge-deploy
           image: sergehall/lens-lounge
           resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
             limits:
               memory: "128Mi"
-              cpu: "500m"
+              cpu: "250m"
           ports:
             - containerPort: 5000
-              protocol: TCP
-      restartPolicy: Always
