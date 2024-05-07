@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app:  lens-lounge-deploy
+      app: lens-lounge-deploy
   template:
     metadata:
       labels:
@@ -16,7 +16,9 @@ spec:
           image: sergehall/lens-lounge
           resources:
             limits:
-              memory: "128Mi"
+              memory: "256Mi"
               cpu: "250m"
           ports:
-            - containerPort: 5000
+            - containerPort: 3000
+              protocol: TCP
+      restartPolicy: Always
