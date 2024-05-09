@@ -18,11 +18,11 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('/version')
+  @Get('version')
   async getHello(): Promise<string> {
     const version = await this.baseConfig.getVersion('VERSION_2');
     const hostname = os.hostname();
-    return `<h1>VERSION${version}: Hello from ${hostname}</h1>`;
+    return `<h1>VERSION: ${version}. Hello from ${hostname}</h1>`;
   }
 
   @Get('heroku-version')
