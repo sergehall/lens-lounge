@@ -3,6 +3,7 @@ import { AppService } from './app.service';
 import * as os from 'os';
 import { BaseConfig } from '../config/base/base.config';
 import { ApiTags } from '@nestjs/swagger';
+import axios from 'axios';
 
 @Controller()
 @ApiTags('App')
@@ -22,5 +23,19 @@ export class AppController {
     const version = await this.baseConfig.getVersion('VERSION_2');
     const hostname = os.hostname();
     return `<h1>VERSION${version}: Hello from ${hostname}</h1>`;
+  }
+
+  @Get('heroku-version')
+  async getHerokuVersion(): Promise<any> {
+    const url = 'https://lens-lounge-3112bdef3757.herokuapp.com/api/version';
+    try {
+      const response = await axios.get(url, {
+        headers: { 'Content-Type': 'application/json' },
+      });
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching Heroku version:', error.message);
+      throw new Error('Failed to fetch Heroku version');
+    }
   }
 }
