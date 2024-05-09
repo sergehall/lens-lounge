@@ -19,13 +19,13 @@
         "tsConfigPath": "apps/lens-lounge/tsconfig.app.json"
       }
     },
-    "payment": {
+    "payment-service": {
       "type": "application",
-      "root": "apps/payment",
+      "root": "apps/payment-service",
       "entryFile": "main",
-      "sourceRoot": "apps/payment/src",
+      "sourceRoot": "apps/payment-service/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/payment/tsconfig.app.json"
+        "tsConfigPath": "apps/payment-service/tsconfig.app.json"
       }
     },
     "file-service": {

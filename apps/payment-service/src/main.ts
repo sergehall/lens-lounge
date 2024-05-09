@@ -1,11 +1,14 @@
 import { NestFactory } from '@nestjs/core';
-import { PaymentModule } from './payment.module';
+import { PaymentServiceModule } from './payment-service.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(PaymentModule, {
-    rawBody: true,
-  });
+  const app = await NestFactory.create<NestExpressApplication>(
+    PaymentServiceModule,
+    {
+      rawBody: true,
+    },
+  );
 
   // Set global prefix for all routes
   app.setGlobalPrefix('api');
@@ -15,7 +18,7 @@ async function bootstrap() {
 
   // Start the application and listen on the specified port
   await app.listen(port, () => {
-    console.log(`Payment app listening on port: ${port}`);
+    console.log(`Payment-service app listening on port: ${port}`);
   });
 
   const baseUrl = await app.getUrl();

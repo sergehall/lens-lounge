@@ -1,5 +1,5 @@
 {
-  "name": "payment",
+  "name": "payment-service",
   "version": "2.0.0",
   "description": "NestJS app by PostgreSQL (Prisma). My first steps work with NodeJS, Express, NestJS, Microservices, RabbitMQ, WebSocket, Docker + kubernetes + jenkins, SOLID, Hexagonal architecture, SAGA,front-end basics.",
   "author": "Serge Hall",
@@ -14,7 +14,7 @@
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev.lens-lounge": "nest start lens-lounge --watch",
-    "start:dev.payment": "nest start payment --watch",
+    "start:dev.payment-service": "nest start payment-service --watch",
     "start:dev.file-services": "nest start file-service --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/lens-lounge/main",
