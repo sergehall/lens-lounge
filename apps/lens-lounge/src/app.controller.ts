@@ -12,12 +12,12 @@ export class AppController {
     private readonly baseConfig: BaseConfig,
   ) {}
 
-  @Get('api')
+  @Get()
   getHelloApp(): string {
     return this.appService.getHello();
   }
 
-  @Get('api/version')
+  @Get('version')
   async getHello(): Promise<string> {
     const version = await this.baseConfig.getVersion('VERSION_2');
     const hostname = os.hostname();
