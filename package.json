@@ -1,6 +1,6 @@
 {
   "name": "lens-lounge",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "NestJS app by PostgreSQL (Prisma). My first steps work with NodeJS, Express, NestJS, Microservices, RabbitMQ, WebSocket, Docker + kubernetes + jenkins, SOLID, Hexagonal architecture, SAGA,front-end basics.",
   "author": "Serge Hall",
   "private": true,
