@@ -1,25 +1,37 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: file-service-deploy
+  name: file-service-deploy  # <--- This is the name of the Deployment
 spec:
-  replicas: 1
+  replicas: 1  # <--- This specifies the number of pod replicas to run
   selector:
     matchLabels:
-      app: file-service-deploy
+      app: file-service-deploy  # <--- This label is used to select the pods managed by this Deployment
   template:
     metadata:
       labels:
-        app: file-service-deploy
+        app: file-service-deploy  # <--- This label is applied to the pods created by this template
     spec:
       containers:
         - name: lens-lounge-deploy  # <--- This is the name of the container
-          image: sergehall/lens-lounge-paymen
+          image: sergehall/lens-lounge-file-service  # <--- This is the image used for the container
           resources:
             limits:
               memory: "256Mi" # <--- This is the maximum amount of memory that the container can use
               cpu: "250m"  # <--- This is the maximum amount of CPU that the container can use
           ports:
-            - containerPort: 5000 # <--- This is the port that the container is listening on
+            - containerPort: 5003 # <--- This is the port that the container is listening on
               protocol: TCP # <--- This is the protocol that the container is listening on
-      restartPolicy: Always
+      restartPolicy: Always # <--- This policy ensures that the container is always restarted if it crashes
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: file-service-deploy  # <--- This is the name of the Service
+spec:
+  type: LoadBalancer  # <--- This type exposes the Service externally using a cloud provider's load balancer
+  selector:
+    app: file-service-deploy  # <--- This label selector matches the label on the pods to target them
+  ports:
+    - port: 80  # <--- This is the port that the Service will be exposed on
+      targetPort: 5003  # <--- This is the port on the container that the traffic will be forwarded to
