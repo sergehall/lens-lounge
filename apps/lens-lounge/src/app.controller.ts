@@ -27,7 +27,7 @@ export class AppController {
 
   @Get('heroku-version')
   async getHerokuVersion(): Promise<any> {
-    const url = 'https://lens-lounge-3112bdef3757.herokuapp.com/api/version';
+    const url = 'https://lens-lounge-3112bdef3757.herokuapp.com/version';
     try {
       const response = await axios.get(url, {
         headers: { 'Content-Type': 'application/json' },
@@ -36,6 +36,20 @@ export class AppController {
     } catch (error) {
       console.error('Error fetching Heroku version:', error.message);
       throw new Error('Failed to fetch Heroku version');
+    }
+  }
+
+  @Get('placeholder/posts')
+  async jsonPlaceholder(): Promise<any> {
+    const url = 'https://jsonplaceholder.typicode.com/posts';
+    try {
+      const response = await axios.get(url, {
+        headers: { 'Content-Type': 'application/json' },
+      });
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching placeholder:', error.message);
+      throw new Error('Failed to fetch placeholder');
     }
   }
 }
