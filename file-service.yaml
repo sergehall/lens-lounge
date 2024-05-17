@@ -29,9 +29,10 @@ kind: Service
 metadata:
   name: file-service-deploy  # <--- This is the name of the Service
 spec:
-  type: LoadBalancer  # <--- This type exposes the Service externally using a cloud provider's load balancer
+  type: ClusterIP # <--- This is the type of the Service  (ClusterIP, NodePort, LoadBalancer, or ExternalName)
   selector:
     app: file-service-deploy  # <--- This label selector matches the label on the pods to target them
   ports:
-    - port: 80  # <--- This is the port that the Service will be exposed on
+    - protocol: TCP
+      port: 83  # <--- This is the port that the Service will be exposed on
       targetPort: 5003  # <--- This is the port on the container that the traffic will be forwarded to

@@ -23,3 +23,16 @@ spec:
             - containerPort: 5000 # <--- This is the port that the container is listening on
               protocol: TCP # <--- This is the protocol that the container is listening on
       restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lens-lounge-deploy
+spec:
+  type: LoadBalancer
+  selector:
+    app: lens-lounge-deploy
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000

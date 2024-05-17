@@ -29,9 +29,10 @@ kind: Service
 metadata:
   name: payment-service-deploy
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: payment-service-deploy
   ports:
-  - port: 80
+  - protocol: TCP
+    port: 82
     targetPort: 5002
