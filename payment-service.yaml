@@ -33,5 +33,6 @@ spec:
   selector:
     app: payment-service-deploy
   ports:
-  - port: 82
-    targetPort: 82
+    - protocol: TCP
+      port: 82
+      targetPort: 82

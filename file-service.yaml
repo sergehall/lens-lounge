@@ -33,5 +33,6 @@ spec:
   selector:
     app: file-service-deploy  # <--- This label selector matches the label on the pods to target them
   ports:
-    - port: 83  # <--- This is the port that the Service will be exposed on
+    - protocol: TCP
+      port: 83  # <--- This is the port that the Service will be exposed on
       targetPort: 83  # <--- This is the port on the container that the traffic will be forwarded to
