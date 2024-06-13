@@ -19,7 +19,7 @@ export class AppController {
   }
 
   @Get('version')
-  async getHello(): Promise<string> {
+  async getVersionApp(): Promise<string> {
     const version = await this.baseConfig.getVersion('VERSION_2');
     const hostname = os.hostname();
     return `<h1>VERSION: ${version}. Hello from ${hostname}</h1>`;
