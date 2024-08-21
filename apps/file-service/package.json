@@ -6,6 +6,7 @@
   "private": true,
   "license": "It_Incubator",
   "engines": {
+    "yarn": "4.4.0",
     "node": "20.11.1",
     "npm": "10.5.0"
   },
@@ -13,8 +14,6 @@
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
-    "start:dev.lens-lounge": "nest start lens-lounge --watch",
-    "start:dev.payment": "nest start payment --watch",
     "start:dev.file-services": "nest start file-service --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/lens-lounge/main",

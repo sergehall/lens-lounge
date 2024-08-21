@@ -2,6 +2,15 @@
 /dist
 /node_modules
 
+/apps/lens-lounge/dist/
+/apps/lens-lounge/node_modules/
+
+/apps/payment-service/dist/
+/apps/payment-service/node_modules/
+
+/apps/file-service/dist/
+/apps/file-service/node_modules/
+
 # .env.dev environment variables file
 /.env.dev
 /.env
