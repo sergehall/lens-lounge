@@ -15,8 +15,6 @@
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev.lens-lounge": "nest start lens-lounge --watch",
-    "start:dev.payment-service": "nest start payment-service --watch",
-    "start:dev.file-services": "nest start file-service --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/lens-lounge/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
