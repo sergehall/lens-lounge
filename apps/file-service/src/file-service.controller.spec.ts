@@ -11,12 +11,14 @@ describe('FileServiceController', () => {
       providers: [FileServiceService],
     }).compile();
 
-    fileServiceController = app.get<FileServiceController>(FileServiceController);
+    fileServiceController = app.get<FileServiceController>(
+      FileServiceController,
+    );
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(fileServiceController.getHello()).toBe('Hello World!');
+    it('should return the file service greeting', () => {
+      expect(fileServiceController.getHello()).toBe('Hello from file-service!');
     });
   });
 });

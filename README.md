@@ -1,76 +1,58 @@
-<p align="center">
-  <a href="https://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Lens Lounge
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Lens Lounge is a NestJS learning project with a small microservice-style layout:
 
-  <p align="center">A progressive <a href="https://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- `apps/lens-lounge` - main API application
+- `apps/payment-service` - payment service
+- `apps/file-service` - file service
 
-## Description
+The project uses PostgreSQL/Prisma-oriented dependencies, RabbitMQ/Nest microservices, WebSocket support, Docker/Kubernetes deployment files, and a Yarn Berry toolchain pinned in the repository.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Environment
 
-## Installation
+- Node.js `24.15.0`
+- npm `11.12.1`
+- Yarn `4.14.1`
+- TypeScript `5.9.3`
+
+Yarn is committed locally at `.yarn/releases/yarn-4.14.1.cjs` and wired through `.yarnrc.yml`, so Corepack and CI use the same package manager version.
+
+## Install
 
 ```bash
-$ npm install
+corepack enable
+yarn install
 ```
 
-## Running the app
+## Scripts
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+yarn start
+yarn start:dev.lens-lounge
+yarn start:dev.payment-service
+yarn start:dev.file-services
+yarn build
+yarn typecheck
+yarn lint
+yarn lint:fix
+yarn format:prettier
+yarn fix
+yarn test
 ```
 
-## Test
+`yarn fix` runs ESLint autofix and Prettier formatting.
 
-```bash
-# unit tests
-$ npm run test
+## CI
 
-# e2e tests
-$ npm run test:e2e
+GitHub Actions runs on pull requests and pushes to `main`:
 
-# test coverage
-$ npm run test:cov
-```
+- `yarn typecheck`
+- `yarn lint`
 
-## Support
+## Author
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Serge Hall
 
-## Stay in touch
-- Author - Serge Hall
-- Immerse yourself in learning. [IT-KAMASUTRA](https://it-incubator.io/en)
-- Website - [https://sergioartg.com](https://sergioartg.com/)
-
-## Respect
-- My first steps work with NodeJS, Express, NestJS, Swagger, MongoDB, PostgreSQL, Microservices, RabbitMQ, WebSocket, DevOps basics (docker + kubernetes + jenkins), SOLID, Hexagonal architecture, SAGA,front-end basics.
-- I am a student of a wonderful team [IT-KAMASUTRA](https://it-incubator.io/en) that give education to the front-end and back-end. These are my first steps in this area and the project is being written from scratch with the knowledge gained here. I highly recommend this team to everyone.
 ## License
 
-Nest is [MIT licensed](LICENSE).
-
+MIT

@@ -4,7 +4,7 @@ import { UpdateSocketDto } from './dto/update-socket.dto';
 
 @Injectable()
 export class SocketService {
-  create(createSocketDto: CreateSocketDto) {
+  create(_createSocketDto: CreateSocketDto) {
     return 'This action adds a new socket';
   }
 
@@ -16,7 +16,7 @@ export class SocketService {
     return `This action returns a #${id} socket`;
   }
 
-  update(id: number, updateSocketDto: UpdateSocketDto) {
+  update(id: number, _updateSocketDto: UpdateSocketDto) {
     return `This action updates a #${id} socket`;
   }
 
