@@ -28,7 +28,7 @@
     "test:e2e": "jest --config ./apps/lens-lounge/test/jest-e2e.json"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.564.0",
+    "@aws-sdk/client-s3": "^3.1065.0",
     "@nestjs/common": "^11.1.24",
     "@nestjs/config": "^4.0.4",
     "@nestjs/core": "^11.1.24",
@@ -49,7 +49,7 @@
     "axios": "^1.17.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
-    "cookie-parser": "^1.4.6",
+    "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.5",
     "joi": "^17.13.0",
     "pg": "^8.11.5",
@@ -58,7 +58,7 @@
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@aws-sdk/credential-provider-sso": "^3.635.0",
+    "@aws-sdk/credential-provider-sso": "^3.972.51",
     "@nestjs/cli": "^11.0.21",
     "@nestjs/schematics": "^11.1.0",
     "@nestjs/testing": "^11.1.24",
