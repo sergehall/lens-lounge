@@ -1,9 +1,8 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { AppService, type JsonPlaceholderPost } from './app.service';
 import * as os from 'os';
 import { BaseConfig } from '../config/base/base.config';
 import { ApiTags } from '@nestjs/swagger';
-import axios from 'axios';
 
 @Controller()
 @ApiTags('App')
@@ -26,30 +25,12 @@ export class AppController {
   }
 
   @Get('heroku-version')
-  async getHerokuVersion(): Promise<any> {
-    const url = 'https://lens-lounge-3112bdef3757.herokuapp.com/version';
-    try {
-      const response = await axios.get(url, {
-        headers: { 'Content-Type': 'application/json' },
-      });
-      return response.data;
-    } catch (error) {
-      console.error('Error fetching Heroku version:', error.message);
-      throw new Error('Failed to fetch Heroku version');
-    }
+  getHerokuVersion(): Promise<string> {
+    return this.appService.getHerokuVersion();
   }
 
   @Get('placeholder/posts')
-  async jsonPlaceholder(): Promise<any> {
-    const url = 'https://jsonplaceholder.typicode.com/posts';
-    try {
-      const response = await axios.get(url, {
-        headers: { 'Content-Type': 'application/json' },
-      });
-      return response.data;
-    } catch (error) {
-      console.error('Error fetching placeholder:', error.message);
-      throw new Error('Failed to fetch placeholder');
-    }
+  jsonPlaceholder(): Promise<readonly JsonPlaceholderPost[]> {
+    return this.appService.getJsonPlaceholderPosts();
   }
 }
