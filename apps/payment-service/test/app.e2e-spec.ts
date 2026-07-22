@@ -1,24 +1,29 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import * as request from 'supertest';
 import { PaymentServiceModule } from '../src/payment-service.module';
 
 describe('PaymentServiceController (e2e)', () => {
   let app: INestApplication;
+  let baseUrl: string;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [PaymentServiceModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
-    await app.init();
+    await app.listen(0, '127.0.0.1');
+    baseUrl = await app.getUrl();
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+  afterAll(async () => {
+    await app.close();
+  });
+
+  it('/api/payment-service (GET)', async () => {
+    const response = await fetch(`${baseUrl}/api/payment-service`);
+
+    expect(response.status).toBe(200);
+    await expect(response.text()).resolves.toBe('Hello from payment-service!');
   });
 });

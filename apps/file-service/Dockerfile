@@ -1,13 +1,32 @@
-FROM --platform=linux/amd64 node:20.11.1-alpine
+FROM node:24.15.0-alpine AS dependencies
 
 WORKDIR /app
 
-EXPOSE 82
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn/releases ./.yarn/releases
 
-COPY package.json yarn.lock ./apps/file-service/
+RUN corepack enable && yarn install --immutable
 
-RUN yarn install
+FROM dependencies AS build
 
-COPY . ./
+COPY nest-cli.json tsconfig.json tsconfig.build.json ./
+COPY apps ./apps
 
-CMD ["yarn", "start"]
+RUN yarn build:file-service && yarn workspaces focus --production
+
+FROM node:24.15.0-alpine AS runtime
+
+ENV NODE_ENV=production \
+    PORT=83
+
+WORKDIR /app
+
+COPY --from=build --chown=node:node /app/package.json ./package.json
+COPY --from=build --chown=node:node /app/node_modules ./node_modules
+COPY --from=build --chown=node:node /app/dist/apps/file-service ./dist/apps/file-service
+
+USER node
+
+EXPOSE 83
+
+CMD ["node", "dist/apps/file-service/main.js"]

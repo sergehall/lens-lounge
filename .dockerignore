@@ -1,0 +1,11 @@
+.git
+.github
+.idea
+.yarn/install-state.gz
+coverage
+dist
+node_modules
+**/node_modules
+*.log
+.env
+.env.*
